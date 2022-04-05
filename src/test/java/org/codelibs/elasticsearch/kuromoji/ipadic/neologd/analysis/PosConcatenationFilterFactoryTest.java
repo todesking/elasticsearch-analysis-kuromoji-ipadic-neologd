@@ -41,6 +41,7 @@ public class PosConcatenationFilterFactoryTest {
         runner.onBuild(new ElasticsearchClusterRunner.Builder() {
             @Override
             public void build(final int number, final Builder settingsBuilder) {
+                settingsBuilder.put("cluster.routing.allocation.disk.threshold_enabled", false);
                 settingsBuilder.put("http.cors.enabled", true);
                 settingsBuilder.put("http.cors.allow-origin", "*");
                 settingsBuilder.putList("discovery.seed_hosts", "127.0.0.1:9301");
