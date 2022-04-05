@@ -37,12 +37,12 @@
 		<repository>
 			<id>codelibs.org</id>
 			<name>CodeLibs Repository</name>
-			<url>http://maven.codelibs.org/</url>
+			<url>https://maven.codelibs.org/</url>
 		</repository>
 		<repository>
 			<name>oss.sonatype.org</name>
 			<id>oss.sonatype.org</id>
-			<url>http://oss.sonatype.org/content/groups/public/</url>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
 		</repository>
 	</repositories>
 	<build>
