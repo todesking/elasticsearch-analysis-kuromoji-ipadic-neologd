@@ -18,7 +18,7 @@ import org.codelibs.elasticsearch.runner.ElasticsearchClusterRunner;
 import org.codelibs.elasticsearch.runner.net.EcrCurl;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.settings.Settings.Builder;
-import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.xcontent.XContentType;
 import org.elasticsearch.node.Node;
 import org.junit.After;
 import org.junit.Before;
@@ -42,10 +42,10 @@ public class PosConcatenationFilterFactoryTest {
             @Override
             public void build(final int number, final Builder settingsBuilder) {
                 settingsBuilder.put("cluster.routing.allocation.disk.threshold_enabled", false);
+                settingsBuilder.put("discovery.type", "single-node");
                 settingsBuilder.put("http.cors.enabled", true);
                 settingsBuilder.put("http.cors.allow-origin", "*");
                 settingsBuilder.putList("discovery.seed_hosts", "127.0.0.1:9301");
-                settingsBuilder.putList("cluster.initial_master_nodes", "127.0.0.1:9301");
             }
         }).build(newConfigs().clusterName(clusterName).numOfNode(numOfNode).pluginTypes("org.codelibs.elasticsearch.kuromoji.ipadic.neologd.KuromojiNeologdPlugin"));
 
